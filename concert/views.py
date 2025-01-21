@@ -36,12 +36,13 @@ def index(request):
 
 
 def songs(request):
-    songs = req.get("SONGS_URL/song").json()
+    songs = req.get("http://songs-sn-labs-ryswilli.labs-prod-openshift-san-a45631dc5778dc6371c67d206ba9ae5c-0000.us-east.containers.appdomain.cloud/song").json()
     return render(request, "songs.html", {"songs": songs["songs"]})
 
 
+
 def photos(request):
-    photos = req.get("PHOTO_URL/picture").json()
+    photos = req.get("photos/picture").json()
     return render(request, "photos.html", {"photos": photos})
 
 def login_view(request):
